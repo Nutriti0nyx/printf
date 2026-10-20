@@ -22,7 +22,7 @@ char * decTo(long valeur, int base){
         str[i] = str[j];
         str[j] = t;
     }
-    free(str);
+    
     return str;
 }
 
@@ -32,6 +32,7 @@ int print(char* str){
         write(1, &(char){str[i]}, 1);
         compteur++;
     };
+    free(str);
     return compteur;    
 }
 
@@ -92,5 +93,5 @@ int my_printf(char* restrict str, ...){
 
 int main(){
     char* p;
-    printf("%d",my_printf("%sefezf","-134"));
+    printf("%d",my_printf("%xefezf",-134));
 }
